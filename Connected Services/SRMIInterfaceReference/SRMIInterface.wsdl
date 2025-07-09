@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SRMIInterface" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_ISRMIInterface_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SRMIInterface" />
+      <xs:element name="PO_Interface">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SRMIInterface" minOccurs="0" name="POdata" nillable="true" type="q1:POinterfacex" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PO_InterfaceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SRMIInterface" minOccurs="0" name="PO_InterfaceResult" nillable="true" type="q2:ArrayOfInterfaceResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DO_Interface">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SRMIInterface" minOccurs="0" name="DOdata" nillable="true" type="q3:DOInterfacex" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DO_InterfaceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SRMIInterface" minOccurs="0" name="DO_InterfaceResult" nillable="true" type="q4:ArrayOfInterfaceResult" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SRMIInterface" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SRMIInterface" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="POinterfacex">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Authenkey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="POinterfaces" nillable="true" type="tns:ArrayOfPOinterface" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="POinterfacex" nillable="true" type="tns:POinterfacex" />
+      <xs:complexType name="ArrayOfPOinterface">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="POinterface" nillable="true" type="tns:POinterface" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPOinterface" nillable="true" type="tns:ArrayOfPOinterface" />
+      <xs:complexType name="POinterface">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccAssignment" nillable="true" type="tns:ArrayOfPO_AccAssignment" />
+          <xs:element minOccurs="0" name="CondHeader" nillable="true" type="tns:ArrayOfPO_CondHeader" />
+          <xs:element minOccurs="0" name="CondItem" nillable="true" type="tns:ArrayOfPO_CondItem" />
+          <xs:element minOccurs="0" name="Header" nillable="true" type="tns:PO_Header" />
+          <xs:element minOccurs="0" name="Item" nillable="true" type="tns:ArrayOfPO_Item" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="POinterface" nillable="true" type="tns:POinterface" />
+      <xs:complexType name="ArrayOfPO_AccAssignment">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PO_AccAssignment" nillable="true" type="tns:PO_AccAssignment" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPO_AccAssignment" nillable="true" type="tns:ArrayOfPO_AccAssignment" />
+      <xs:complexType name="PO_AccAssignment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PO_ASSETSUB_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_ASSET_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_BA_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COST_CTR_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_GL_ACC_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_ITEM_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_ORDER_NO" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PO_AccAssignment" nillable="true" type="tns:PO_AccAssignment" />
+      <xs:complexType name="ArrayOfPO_CondHeader">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PO_CondHeader" nillable="true" type="tns:PO_CondHeader" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPO_CondHeader" nillable="true" type="tns:ArrayOfPO_CondHeader" />
+      <xs:complexType name="PO_CondHeader">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PO_COND_CURR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COND_RT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COND_TP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COND_VEN" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PO_CondHeader" nillable="true" type="tns:PO_CondHeader" />
+      <xs:complexType name="ArrayOfPO_CondItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PO_CondItem" nillable="true" type="tns:PO_CondItem" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPO_CondItem" nillable="true" type="tns:ArrayOfPO_CondItem" />
+      <xs:complexType name="PO_CondItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PO_COND_CURR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COND_ITEM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COND_PRC_UNIT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COND_RT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COND_TP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COND_UNIT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COND_VEN" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PO_CondItem" nillable="true" type="tns:PO_CondItem" />
+      <xs:complexType name="PO_Header">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PO_COM_CODE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_COM_NAME" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_CREATE_BY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_CURR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_CURR_LEVEL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_DOC_DATE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_EXCH" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_HEADER_NOTE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_INCOTERM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_INCOTERM_DESC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_PAYMENT_TERM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_PAYMENT_TERM_DESC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_PUR_GRP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_PUR_ORG" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_REL1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_REL_TXT1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_TOTAL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_TYPE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_TYPE_DESC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_VENDOR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_VENDOR_EMAIL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_VENDOR_EXTENSION" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_VENDOR_FAX" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_VENDOR_NAME" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PO_Header" nillable="true" type="tns:PO_Header" />
+      <xs:complexType name="ArrayOfPO_Item">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PO_Item" nillable="true" type="tns:PO_Item" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPO_Item" nillable="true" type="tns:ArrayOfPO_Item" />
+      <xs:complexType name="PO_Item">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PO_ACC_CAT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_CONV_OPU" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_CONV_OUN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_DELIVERY_COMP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_DEL_DATE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_DEL_IND" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_FINAL_INV" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_ITEM_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_MAT_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_MAT_SHORT_TXT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_NET_PRICE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_NET_VELUE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_ORDER_UNIT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_PLANT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_PLANT_DESC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_QTY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PO_TAXCODE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PR_ITEM_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PR_NO" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PO_Item" nillable="true" type="tns:PO_Item" />
+      <xs:complexType name="ArrayOfInterfaceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InterfaceResult" nillable="true" type="tns:InterfaceResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfInterfaceResult" nillable="true" type="tns:ArrayOfInterfaceResult" />
+      <xs:complexType name="InterfaceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EKKO_EBELN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TYPE" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InterfaceResult" nillable="true" type="tns:InterfaceResult" />
+      <xs:complexType name="DOInterfacex">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Authenkey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DOInterfaces" nillable="true" type="tns:ArrayOfDOInterface" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DOInterfacex" nillable="true" type="tns:DOInterfacex" />
+      <xs:complexType name="ArrayOfDOInterface">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DOInterface" nillable="true" type="tns:DOInterface" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDOInterface" nillable="true" type="tns:ArrayOfDOInterface" />
+      <xs:complexType name="DOInterface">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DOHeader" nillable="true" type="tns:DO_Header" />
+          <xs:element minOccurs="0" name="DoItem" nillable="true" type="tns:ArrayOfDO_Item" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DOInterface" nillable="true" type="tns:DOInterface" />
+      <xs:complexType name="DO_Header">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DO_ACT_GM_DT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_CANCEL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_COM_CODE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_CREATE_BY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_CREATE_TM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_DLVY_DT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_DLVY_TY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_DOC_DT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_TRNSP_GRP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_VENDOR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_VENDOR_TRAN" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DO_Header" nillable="true" type="tns:DO_Header" />
+      <xs:complexType name="ArrayOfDO_Item">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DO_Item" nillable="true" type="tns:DO_Item" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDO_Item" nillable="true" type="tns:ArrayOfDO_Item" />
+      <xs:complexType name="DO_Item">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DO_BATCH" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_ITM_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_MAT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_MAT_GRP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_MAT_TEXT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_OVER_TOLERANCE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_PLANT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_PO_ITEM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_PO_NO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_QTY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_SLOC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_UNDER_TOLERANCE" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DO_UOM" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DO_Item" nillable="true" type="tns:DO_Item" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ISRMIInterface_PO_Interface_InputMessage">
+    <wsdl:part name="parameters" element="tns:PO_Interface" />
+  </wsdl:message>
+  <wsdl:message name="ISRMIInterface_PO_Interface_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PO_InterfaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISRMIInterface_DO_Interface_InputMessage">
+    <wsdl:part name="parameters" element="tns:DO_Interface" />
+  </wsdl:message>
+  <wsdl:message name="ISRMIInterface_DO_Interface_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DO_InterfaceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISRMIInterface">
+    <wsdl:operation name="PO_Interface">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISRMIInterface/PO_Interface" message="tns:ISRMIInterface_PO_Interface_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISRMIInterface/PO_InterfaceResponse" message="tns:ISRMIInterface_PO_Interface_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DO_Interface">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISRMIInterface/DO_Interface" message="tns:ISRMIInterface_DO_Interface_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISRMIInterface/DO_InterfaceResponse" message="tns:ISRMIInterface_DO_Interface_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpsBinding_ISRMIInterface" type="tns:ISRMIInterface">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_ISRMIInterface_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PO_Interface">
+      <soap:operation soapAction="http://tempuri.org/ISRMIInterface/PO_Interface" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DO_Interface">
+      <soap:operation soapAction="http://tempuri.org/ISRMIInterface/DO_Interface" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SRMIInterface">
+    <wsdl:port name="BasicHttpsBinding_ISRMIInterface" binding="tns:BasicHttpsBinding_ISRMIInterface">
+      <soap:address location="https://qasrmtruckscale.scg.com/RMM_RECIEVE_PODO/SRMIInterface.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

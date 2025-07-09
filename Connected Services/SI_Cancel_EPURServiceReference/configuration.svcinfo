@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;SI_CancelBinding1&quot; /&gt;" bindingType="basicHttpBinding" name="SI_CancelBinding1" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://scgtbstppi81.cementhai.co.th:50000/sap/xi/engine?type=entry&amp;amp;version=3.0&amp;amp;Sender.Service=BS_CBMR_EPURCHASING_D&amp;amp;Interface=urn%3Ascg.co.th%3ACBMR%3AEPURCHASING%3ASTOCK%5ESI_Cancel&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;SI_CancelBinding1&quot; contract=&quot;SI_Cancel_EPURServiceReference.SI_Cancel&quot; name=&quot;SI_CancelPort1&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://scgtbstppi81.cementhai.co.th:50000/sap/xi/engine?type=entry&amp;amp;version=3.0&amp;amp;Sender.Service=BS_CBMR_EPURCHASING_D&amp;amp;Interface=urn%3Ascg.co.th%3ACBMR%3AEPURCHASING%3ASTOCK%5ESI_Cancel&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;SI_CancelBinding1&quot; contract=&quot;SI_Cancel_EPURServiceReference.SI_Cancel&quot; name=&quot;SI_CancelPort1&quot; /&gt;" contractName="SI_Cancel_EPURServiceReference.SI_Cancel" name="SI_CancelPort1" />
+  </endpoints>
+</configurationSnapshot>

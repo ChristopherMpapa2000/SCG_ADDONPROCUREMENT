@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:p1="urn:scg.co.th:CBMR:EPURCHASING:STOCK" name="SI_RefPO" targetNamespace="urn:scg.co.th:CBMR:EPURCHASING:STOCK" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation />
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="OP_SI_RefPO" />
+  <wsdl:types>
+    <xsd:schema xmlns="urn:scg.co.th:CBMR:EPURCHASING:STOCK" targetNamespace="urn:scg.co.th:CBMR:EPURCHASING:STOCK" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="MT_RefPO" type="p1:DT_RefPO" />
+      <xsd:element name="MT_RefPOReturn" type="p1:DT_RefPOReturn" />
+      <xsd:complexType name="DT_RefPO">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">dd256b27cece11e48372000000522fa6</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Header">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">78d25a82cc9111e4ade200ffc6971f42</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="BUDAT" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">78d239b1cc9111e4b24200ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="BLDAT" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">78d239b2cc9111e4b29b00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="XBLNR" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">78d239b3cc9111e49a7a00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="BKTXT" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">78d239b4cc9111e4a6d800ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="FRBNR" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">78d239b5cc9111e4a8cc00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="XABLN" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">78d239b6cc9111e4c59400ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Item">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">78d25a83cc9111e49ebe00ffc6971f42</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="BWART" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">ab2a724bcc9111e4824400ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MATNR" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">ab2a724ccc9111e4b9a500ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="WERKS" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">ab2a724dcc9111e4aaee00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="LGORT" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">ab2a724ecc9111e4a3e400ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MENGE" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">ab2a724fcc9111e4bb3300ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MEINS" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">ab2a7250cc9111e4803700ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="GRUND" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">ab2a7251cc9111e4a22700ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="EBELN" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">ab2a7252cc9111e4ba2f00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="EBELP" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">ab2a7253cc9111e49a4500ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="ELIKZ" type="xsd:string" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_RefPOReturn">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">9045c197cde211e4b71f000000522fa6</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Return">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">0936bf7acc9311e4925900ffc6971f42</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="TYPE" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">0936bf76cc9311e48fc300ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MESSAGE" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">0936bf77cc9311e4aa8a00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MBLNR" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">0936bf78cc9311e4c5c200ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MJAHR" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">0936bf79cc9311e4b8c400ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MT_RefPO">
+    <wsdl:documentation />
+    <wsdl:part name="MT_RefPO" element="p1:MT_RefPO" />
+  </wsdl:message>
+  <wsdl:message name="MT_RefPOReturn">
+    <wsdl:documentation />
+    <wsdl:part name="MT_RefPOReturn" element="p1:MT_RefPOReturn" />
+  </wsdl:message>
+  <wsdl:portType name="SI_RefPO">
+    <wsdl:documentation />
+    <wsdl:operation name="SI_RefPO">
+      <wsdl:documentation />
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_SI_RefPO" />
+      </wsp:Policy>
+      <wsdl:input message="p1:MT_RefPO" />
+      <wsdl:output message="p1:MT_RefPOReturn" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_RefPOBinding" type="p1:SI_RefPO">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <wsdl:operation name="SI_RefPO">
+      <operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <wsdl:input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:input>
+      <wsdl:output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_RefPOService">
+    <wsdl:port name="SI_RefPOPort" binding="p1:SI_RefPOBinding">
+      <address location="http://scgtbstppi81.cementhai.co.th:50000/sap/xi/engine?type=entry&amp;version=3.0&amp;Sender.Service=BS_CBMR_EPURCHASING_D&amp;Interface=urn%3Ascg.co.th%3ACBMR%3AEPURCHASING%3ASTOCK%5ESI_RefPO" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

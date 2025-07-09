@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "62YB6WkLJ/VXlc4KSwoqoLP+xjTsUP/O/S/DxfOekVaAvKtn2rziKGe21Ak3i5y/miC92ciLeGgPUx5QGmW2nQ==",
+  "success": true,
+  "projectFilePath": "C:\\TLIADDON\\AddonProcurement\\AddonProcurement.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\christopher\\.nuget\\packages\\entityframework\\6.5.1\\entityframework.6.5.1.nupkg.sha512",
+    "C:\\Users\\christopher\\.nuget\\packages\\log4net\\3.0.1\\log4net.3.0.1.nupkg.sha512",
+    "C:\\Users\\christopher\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+    "C:\\Users\\christopher\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
+    "C:\\Users\\christopher\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

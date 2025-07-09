@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:p1="urn:scg.co.th:CBMR:EINVENTORY:STOCK" name="SI_StockMove" targetNamespace="urn:scg.co.th:CBMR:EINVENTORY:STOCK" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation />
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="OP_SI_StockMove" />
+  <wsdl:types>
+    <xsd:schema xmlns="urn:scg.co.th:CBMR:EINVENTORY:STOCK" targetNamespace="urn:scg.co.th:CBMR:EINVENTORY:STOCK" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="MT_Return" type="p1:DT_Return" />
+      <xsd:element name="MT_StockMove" type="p1:DT_StockMove" />
+      <xsd:complexType name="DT_Return">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">868516cfd10511e49deb000000522fa6</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Return">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">0936bf7acc9311e4925900ffc6971f42</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="TYPE" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">0936bf76cc9311e48fc300ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MESSAGE" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">0936bf77cc9311e4aa8a00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MBLNR" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">0936bf78cc9311e4c5c200ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MJAHR" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">0936bf79cc9311e4b8c400ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_StockMove">
+        <xsd:annotation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">a6793176d11211e4c004000000522fa6</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Header">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d53d10311e4c73900ffc6971f42</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="PSTNG_DATE" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a1db5d10311e4992800ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="DOC_DATE" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a2d98d10311e4c28700ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="REF_DOC_NO" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a2d99d10311e48dad00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="BILL_OF_LADING" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a2d9ad10311e484a100ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="GR_GI_SLIP_NO" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a2d9bd10311e4a9b400ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="HEADER_TXT" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a2d9cd10311e4944e00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Item">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">e19a7352d10311e4920000ffc6971f42</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="MATERIAL" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d54d10311e4840900ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="PLANT" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d55d10311e48e2800ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="STGE_LOC" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d56d10311e4acd600ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="BATCH" type="xsd:string" />
+                <xsd:element minOccurs="0" name="MOVE_TYPE" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d57d10311e4c8f000ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="ENTRY_QNT" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d58d10311e485a100ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="ENTRY_UOM" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d59d10311e4c61b00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MATERIAL_DEST" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">13eb2b1ad10411e4bcf600ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="PLANT_DEST" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d5ad10311e4b60500ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="SLOC_DEST" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d5bd10311e49c2400ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="CUSTOMER" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d5cd10311e49a6a00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="KOSTL" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d5dd10311e491f000ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="AUFNR" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d5ed10311e48cdf00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="KONTO" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">e19a4d5fd10311e48f2c00ffc6971f42</xsd:appinfo>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MT_StockMove">
+    <wsdl:documentation />
+    <wsdl:part name="MT_StockMove" element="p1:MT_StockMove" />
+  </wsdl:message>
+  <wsdl:message name="MT_Return">
+    <wsdl:documentation />
+    <wsdl:part name="MT_Return" element="p1:MT_Return" />
+  </wsdl:message>
+  <wsdl:portType name="SI_StockMove">
+    <wsdl:documentation />
+    <wsdl:operation name="SI_StockMove">
+      <wsdl:documentation />
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_SI_StockMove" />
+      </wsp:Policy>
+      <wsdl:input message="p1:MT_StockMove" />
+      <wsdl:output message="p1:MT_Return" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_StockMoveBinding" type="p1:SI_StockMove">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <wsdl:operation name="SI_StockMove">
+      <operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <wsdl:input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:input>
+      <wsdl:output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_StockMoveService">
+    <wsdl:port name="SI_StockMovePort" binding="p1:SI_StockMoveBinding">
+      <address location="http://scgtbstppi81.cementhai.co.th:50000/sap/xi/engine?type=entry&amp;version=3.0&amp;Sender.Service=BS_CBMR_EINVENTORY_D&amp;Interface=urn%3Ascg.co.th%3ACBMR%3AEINVENTORY%3ASTOCK%5ESI_StockMove" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
